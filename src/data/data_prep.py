@@ -26,21 +26,16 @@ def save_data(df : pd.DataFrame, filepath: str) -> None:
     except Exception as e:
         raise Exception(f"Error saving data to {filepath}:{e}")
 
-# train_processed_data = fill_missing_with_median(train_data)
-# test_processed_data = fill_missing_with_median(test_data)
-
 def main():
     try:
-        raw_data_path = "C:/Users/bored/Music/Water_Potability/data/raw"
-        processed_data_path = "C:/Users/bored/Music/Water_Potability/data/processed"
+        raw_data_path = r"data\raw"
+        processed_data_path = r"data\processed"
 
         train_data = load_data(os.path.join(raw_data_path,"train.csv"))
         test_data = load_data(os.path.join(raw_data_path,"test.csv"))
 
         train_processed_data = fill_missing_with_median(train_data)
         test_processed_data = fill_missing_with_median(test_data)
-
-    # data_path= os.path.join("data","processed")
 
         os.makedirs(processed_data_path)
 

@@ -41,10 +41,9 @@ def save_data(df : pd.DataFrame, filepath: str) -> None:
     
 
 def main():
-    data_filepath = r"C:\Users\bored\Music\Water_Potability\water_potability.csv"
+    data_filepath = "water_potability.csv"
     params_filepath = "params.yaml"
     raw_data_path = os.path.join("data","raw")
-# data_path = os.path.join("data","raw")
     try:
         data = load_data(data_filepath)
         test_size = load_params(params_filepath)
